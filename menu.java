@@ -428,7 +428,7 @@ public class menu {
                         break;
                     case 6:
                         System.out.println("Nhap ma kht can sua: ");
-                        String mkht = sc.nextLine();
+                        String mkht = sc.nextLine();`
                         dskht.suaKHT(mkht);
                         dskht.capnhatsove(mkht, dshoadon);
                         dskht.ghiFile("dskehoachtour.txt");

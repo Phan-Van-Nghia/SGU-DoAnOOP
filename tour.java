@@ -54,6 +54,7 @@ abstract class tour implements ITour {
     public String getDiadiemKH() {
         return diadiemKH;
     }
+
     public String getDiadiemden(){
         return diadiemden;
     }
@@ -79,6 +80,7 @@ abstract class tour implements ITour {
     public void setDiadiemden(String diadiemden){
         this.diadiemden=diadiemden;
     }
+ 
     public static int nhapsonguyen(String mess){
         while(true){
             try{
@@ -99,13 +101,16 @@ abstract class tour implements ITour {
     
     public abstract String getThongtinmorong1();
     public abstract String getThongtinmorong2();
-
+    @Override
     public void nhap() {
         final String t="^T[0-9]{3}$";
         while(true){
             System.out.println("Nhap ma tour (co dinh dang TXXX, VD: T000)");
             matour=sc.nextLine();
-            if(matour.matches(t)){break;}
+            if(matour.matches(t)){
+                break;
+            }
+            
             System.out.println("Loi dinh dang, vui long nhap lai.");
         }
         System.out.println("Nhap ten tour: ");
@@ -118,8 +123,8 @@ abstract class tour implements ITour {
         System.out.println("Nhap dia diem den ");
         diadiemden=sc.nextLine();
     }
-
-   public void xuat() {
+    @Override
+    public void xuat() {
         System.out.printf("%-10s %-25s %-10d %-15s %-15s %-15s %-15s %-15s\n",
                 matour,
                 tentour,
